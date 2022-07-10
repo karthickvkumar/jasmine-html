@@ -29,27 +29,40 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
-    preprocessors: {
-      'scripts/*.js': ['coverage']
-    },
+    // preprocessors: {
+    //   'scripts/*.js': ['coverage']
+    // },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-    coverageReporter: {
-      type: 'html',
-      dir: 'coverage/'
-    },
+    // coverageReporter: {
+    //   type: 'html',
+    //   dir: 'coverage/'
+    // },
 
-    reporters: ['progress', 'coverage','kjhtml'],
+    // reporters: ['progress', 'junit', 'coverage','kjhtml'],
     
-    jasmineHtmlReporter: {
-        suppressAll: true, 
-        suppressFailed: true
+    
+    // jasmineHtmlReporter: {
+    //     suppressAll: true, 
+    //     suppressFailed: true
+    // },
+
+    // the default configuration
+    junitReporter: {
+      outputDir: 'coverage', // results will be saved as $outputDir/$browserName.xml
+      outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
+      suite: '', // suite will become the package name attribute in xml testsuite element
+      useBrowserName: false, // add browser name to report and classes names
+      nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
+      classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
+      properties: {}, // key value pair of properties to add to the <properties> section of the report
+      xmlVersion: null // use '1' if reporting to be per SonarQube 6.2 XML format
     },
 
-
+    reporters: ['progress', 'junit'],
     // web server port
     port: 9876,
 
@@ -66,15 +79,13 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-
     // start these browsers
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
     browsers: ['Chrome'],
 
-
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser instances should be started simultaneously
