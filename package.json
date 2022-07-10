@@ -1,0 +1,28 @@
+{
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.\r     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'\r     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--, \r     '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.\r      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'\r     -----------------------------------------------------------------",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AA369/jasmine-first-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AA369/jasmine-first-project/issues"
+  },
+  "homepage": "https://github.com/AA369/jasmine-first-project#readme",
+  "devDependencies": {
+    "karma": "^6.4.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.0.0",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.6"
+  }
+}
