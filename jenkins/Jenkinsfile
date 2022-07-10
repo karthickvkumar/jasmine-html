@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/karthickvkumar/jasmine-html'
+            }
+        }
+        stage('Install'){
+            steps{
+                bat 'npm install'
+            }
+        }
+        stage('Test'){
+            steps{
+                bat 'karma start'
+                junit testResults: 'coverage/TESTS.xml', skipMarkingBuildUnstable: false
+            }
+        }
+        stage('Build'){
+            steps{
+                bat 'npm run build'
+            }
+        }
+        stage('CleanUp') {
+            steps {
+                cleanWs()
+            }
+        }
+    }
+    post { 
+        failure { 
+            junit testResults: 'coverage/TESTS.xml', skipMarkingBuildUnstable: false
+        }
+    }
+}
