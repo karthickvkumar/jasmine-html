@@ -9,10 +9,9 @@ describe("Calculator", function() {
         });
         
         it("should return an error if we don't supply two numbers", function() {
-            expect(addition(7, 19)).toBe(26);
-            // spyOn(window, "alert");
-            // addition("Hitchhikers", "Guide")
-            // expect(window.alert).toHaveBeenCalledWith("Error!");
+            spyOn(window, "alert");
+            addition("Hitchhikers", "Guide")
+            expect(window.alert).toHaveBeenCalledWith("Error!");
         });
     });
 });
